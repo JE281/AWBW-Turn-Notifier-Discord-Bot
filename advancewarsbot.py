@@ -11,7 +11,6 @@ if len(sys.argv) > 1:
     debug = sys.argv[1] == "debug"
 bot = commands.Bot(command_prefix='$', description="notify_me_about <game_id>")
 global game_id_list
-game_id_list = ["255899", "255900", "256517", "256552"]
 game_id_list = ["720359", "711425"]
 username_map = {"JE281":"JE281#3663", "Snako":"miriada16#5136", "909_919":"909_919#9429", "Xananarg":"Xananarg#8374", "Joe_Bigfoot":"Joe_Bigfoot#3140", "Unity":"fresh Dumbledore#0343"}
 username_to_discord_user = {"JE281":None, "Snako":None, "909_919":None, "Xananarg":None, "Joe_Bigfoot":None, "Unity":None}
