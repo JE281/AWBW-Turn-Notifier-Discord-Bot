@@ -12,8 +12,9 @@ if len(sys.argv) > 1:
 bot = commands.Bot(command_prefix='$', description="notify_me_about <game_id>")
 global game_id_list
 game_id_list = ["255899", "255900", "256517", "256552"]
-username_map = {"Phelerox":"Phelerox#5519", "Frazz3":"Frazz3#1777", "Quik":"[Q]uik#4332"}
-username_to_discord_user = {"Phelerox":None, "Frazz3":None, "Quik":None}
+game_id_list = ["720359", "711425"]
+username_map = {"JE281":"JE281#3663", "Snako":"miriada16#5136", "909_919":"909_919#9429", "Xananarg":"Xananarg#8374", "Joe_Bigfoot":"Joe_Bigfoot#3140", "Unity":"fresh Dumbledore#0343"}
+username_to_discord_user = {"JE281":None, "Snako":None, "909_919":None, "Xananarg":None, "Joe_Bigfoot":None, "Unity":None}
 aw_channel = discord.Object(id='378694324915011596')
 
 
@@ -83,10 +84,10 @@ async def get_html(session, game_id):
             async with session.get('http://awbw.amarriner.com/game.php?games_id=' + str(game_id)) as response:
                 return await response.text()
     except TimeoutError as te:
-        await send_message(username_to_discord_user["Phelerox"], "TimeoutError! " + str(te))
+        await send_message(username_to_discord_user["JE281"], "TimeoutError! " + str(te))
         return await get_html(session, game_id)
     except Exception as e:
-        await send_message(username_to_discord_user["Phelerox"], "Unknown exception when fetching html! " + str(e.__class__.__name__))
+        await send_message(username_to_discord_user["JE281"], "Unknown exception when fetching html! " + str(e.__class__.__name__))
         return await get_html(session, game_id)
 
 async def send_message(destination, message):
@@ -94,7 +95,7 @@ async def send_message(destination, message):
         if not debug:
             await bot.send_message(destination, message)
         else:
-            await bot.send_message(username_to_discord_user["Phelerox"], message)
+            await bot.send_message(username_to_discord_user["JE281"], message)
     except Exception as e:
         print("Unknown exception when sending message: " + str(e.__class__.__name__))
         await send_message(destination, message)
